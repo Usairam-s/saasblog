@@ -58,6 +58,12 @@ export default async function Sites() {
             <h2 className="max-w-[200px] md:max-w-xl items-center text-center text-muted-foreground">
               You dont have any site created
             </h2>
+            <Button asChild>
+              <Link href={"/dashboard/sites/new"}>
+                {" "}
+                <PlusCircle size={15} className="mr-2" /> Create Site
+              </Link>
+            </Button>
           </div>
         </>
       ) : (

@@ -101,6 +101,12 @@ export default async function SiteIdPage({
             <h2 className="max-w-[200px] md:max-w-xl items-center text-center text-muted-foreground">
               You dont have any Article created
             </h2>
+            <Button asChild>
+              <Link href={`/dashboard/sites/${params.siteId}/create`}>
+                <PlusCircle size={15} className="mr-2" />
+                Create Article
+              </Link>
+            </Button>
           </div>
         </>
       ) : (

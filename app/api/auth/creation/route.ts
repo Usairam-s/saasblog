@@ -31,7 +31,7 @@ export async function GET() {
 
   return NextResponse.redirect(
     process.env.NODE_ENV === "production"
-      ? "https://saasblog.vercel.app/dashboard"
+      ? "https://saasblog-phi.vercel.app/dashboard"
       : "http://localhost:3000/dashboard"
   );
 }
