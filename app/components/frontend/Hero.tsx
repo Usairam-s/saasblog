@@ -45,7 +45,7 @@ export function Hero() {
             </span>
 
             <h1 className="mt-8 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-none">
-              Setup your Blog{" "}
+              Get your Blog live{" "}
               <span className="block text-primary">in Minutes!</span>
             </h1>
 

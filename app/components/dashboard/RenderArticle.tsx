@@ -14,8 +14,10 @@ import BlockQuote from "@tiptap/extension-blockquote";
 import TextStyle from "@tiptap/extension-text-style";
 import CodeBlock from "@tiptap/extension-code-block";
 import OrderList from "@tiptap/extension-ordered-list";
-import Bold from "@tiptap/extension-bold"; // Ajoutez cette ligne
-import HardBreak from "@tiptap/extension-hard-break"; // Ajoutez cette ligne
+import Bold from "@tiptap/extension-bold";
+import HardBreak from "@tiptap/extension-hard-break";
+import TaskItem from "@tiptap/extension-task-item"; // Add this
+import TaskList from "@tiptap/extension-task-list"; // Add this
 
 export default function RenderArticle({ json }: { json: JSONContent }) {
   const output: any = useMemo(() => {
@@ -33,10 +35,13 @@ export default function RenderArticle({ json }: { json: JSONContent }) {
       TextStyle,
       CodeBlock,
       OrderList,
-      Bold, // Ajoutez cette ligne
-      HardBreak, // Ajoutez cette ligne
+      Bold,
+      HardBreak,
+      TaskItem, // Add this
+      TaskList, // Add this
     ]);
   }, [json]);
+
   return (
     <div
       className="prose m-auto w-11/12 sm:prose-lg dark:prose-invert sm:w-2/3 prose-li:marker:text-primary"
