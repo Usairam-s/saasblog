@@ -1,10 +1,10 @@
 import prisma from "@/app/utils/db";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { requireUser } from "@/app/utils/requireUser";
+
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
+  const user = await requireUser();
 
   if (!user || user === null || !user.id) {
     throw new Error("Something went wrong");
