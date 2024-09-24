@@ -7,9 +7,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { UserCircle } from "lucide-react";
+import { DollarSign, Globe, Home, UserCircle } from "lucide-react";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import DashNav from "../components/dashboard/DashNav";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default async function layout({ children }: { children: ReactNode }) {
   // const { getUser } = getKindeServerSession();
@@ -39,12 +41,42 @@ export default async function layout({ children }: { children: ReactNode }) {
             <DropdownMenuTrigger>
               <UserCircle size={30} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="mr-4 mt-2 w-[200px]">
               {/* <DropdownMenuLabel>My Account</DropdownMenuLabel> */}
               {/* <DropdownMenuSeparator /> */}
-              <DropdownMenuItem>
-                <LogoutLink>Logout</LogoutLink>
+
+              <DropdownMenuItem asChild>
+                <Link
+                  href="/dashboard"
+                  className="flex items-center justify-between"
+                >
+                  Dashboard <Home className="size-5" />
+                </Link>
               </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link
+                  className="flex items-center justify-between"
+                  href="/dashboard/sites"
+                >
+                  Sites <Globe className="size-5" />
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link
+                  className="flex items-center justify-between"
+                  href="/dashboard/pricing"
+                >
+                  Pricing
+                  <DollarSign className="size-5" />
+                </Link>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem>
+                <LogoutLink>
+                  <Button className="w-full">Logout</Button>
+                </LogoutLink>
+              </DropdownMenuItem>
+
               {/* <DropdownMenuItem>Billing</DropdownMenuItem>
               <DropdownMenuItem>Team</DropdownMenuItem>
               <DropdownMenuItem>Subscription</DropdownMenuItem> */}

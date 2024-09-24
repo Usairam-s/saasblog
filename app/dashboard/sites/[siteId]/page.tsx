@@ -70,7 +70,7 @@ export default async function SiteIdPage({
   return (
     <>
       <section>
-        <div className="flex w-full gap-4 mb-10 items-center border-b border-dashed pb-6 justify-end">
+        <div className="flex flex-col md:flex-row w-full gap-4 mb-10 items-center border-b border-dashed pb-6 justify-end">
           <Button variant={"outline"} asChild>
             <Link href={`/blog/${data[0]?.site?.subdirectory}`}>
               <Book size={15} className="mr-2" />
